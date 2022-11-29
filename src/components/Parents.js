@@ -9,7 +9,7 @@ function Parents() {
   const [errorMes, setErrorMes] = useState(null);
   const [query, setQuery] = useState("");
   const [Edit, setEdit] = useState(false);
-  
+
   console.log(query);
 
   useEffect(() => {
@@ -43,7 +43,6 @@ function Parents() {
     return info.filter((item) => item.name.includes(query));
   };
 
-
   //!Delete;
   const handleDelete = async (id) => {
     try {
@@ -62,15 +61,13 @@ function Parents() {
       setErrorMes(e.message);
       setTimeout(() => {
         setErrorMes(null);
-      }, 1500);
+      }, 500);
     }
   };
 
   //!edit
   const editInfo = (e) => {
-    console.log(e);
     setEdit(true);
-    // <EditBox id={id} info={info}/>
   };
 
   //!Add
@@ -79,25 +76,32 @@ function Parents() {
     return info.map((s) => {
       return (
         <div className="card" key={s.id}>
-          {errorMes && <h2>{errorMes}</h2>}
-          <h1 className="infoCard1"> {s.name}</h1>
-          <h2 className="infoCard">age: {s.age}</h2>
-          <h2 className="infoCard">city: {s.city}</h2>
-          <h2 className="infoCard">price (per hour): {s.price}</h2>
-          <h2 className="infoCard">phoneNumber: {s.phoneNumber}</h2>
-          <h2 className="infoCard">gender: {s.gender}</h2>
-          <img src={s.avatar} alt={"Img"} className="imgCard"></img>
-          <button
-            className="btn-Del-Pr"
-            onClick={() => {
-              handleDelete(s.id);
-            }}
-          >
-            delete
-          </button>
-          <button className="btn-Edit-Pr" onClick={editInfo}>
-            edit
-          </button>
+          
+            {errorMes && <h2>{errorMes}</h2>}
+            <h1 className="infoCard1"> {s.name}</h1>
+            <h2 className="infoCard">age: {s.age}</h2>
+            <h2 className="infoCard">city: {s.city}</h2>
+            <h2 className="infoCard">price (per hour): {s.price}</h2>
+            <h2 className="infoCard">phoneNumber: {s.phoneNumber}</h2>
+            <h2 className="infoCard">gender: {s.gender}</h2>
+            <img src={s.avatar} alt={"Img"} className="imgCard"></img>
+            <button
+              className="btn-Del-Pr"
+              onClick={() => {
+                handleDelete(s.id);
+              }}
+            >
+              delete
+            </button>
+            <button className="btn-Edit-Pr" onClick={editInfo}>
+              edit
+            </button>
+         
+          {Edit && (
+            <div className="float">
+              <EditBox s={s} id={s.id} setEdit={setEdit} />
+            </div>
+          )}
         </div>
       );
     });
@@ -105,11 +109,6 @@ function Parents() {
 
   return (
     <div className="Parents">
-      {Edit && (
-        <div className="float">
-          <EditBox info={info} />
-        </div>
-      )}
       {isLoading && <Spinner />}
       <div className="search">
         <input

@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
 
 function Babysitter() {
   const [nameVal, setNameVal] = useState("");
@@ -13,9 +14,7 @@ function Babysitter() {
   const [ImageVal, setImageVal] = useState("");
   const [card, setCard] = useState(true);
   const [Massage, setMassage] = useState(false);
-  
-
-
+  const [value, onChange] = useState(new Date());
 
   const handleInputName = ({ target: { value } }) => {
     setNameVal(value);
@@ -39,45 +38,54 @@ function Babysitter() {
     setImageVal(value);
   };
 
-
-  const handleAddNanny=()=>{
+  const handleAddNanny = () => {
     const { data } = axios.post(
       "https://6374c35a08104a9c5f8866ff.mockapi.io/superNanny",
       {
         name: nameVal,
         price: PriceVal,
         avatar: ImageVal,
-        age:AgeVal,
-        city:CityVal,
-        phoneNumber:PhoneVal,
-        gender:GenderVal
-
-      },
-      
+        age: AgeVal,
+        city: CityVal,
+        phoneNumber: PhoneVal,
+        gender: GenderVal,
+      }
     );
-    setCard(data)
-    setMassage(false)
-    
-
+    setCard(data);
+    setMassage(false);
   };
-  
- 
 
   return (
     <div className="Babysitter">
-      {(!card)&&Massage}
-      {card&&<div className="cardBs">
-        <h1 className="hd">Enter your details</h1>
-        <p className="cd">name</p> <input  className="inputBs" onChange={handleInputName}></input>
-        <p className="cd">age</p> <input  className="inputBs" onChange={handleInputAge}></input>
-        <p className="cd">city</p> <input  className="inputBs" onChange={handleInputCity}></input>
-        <p className="cd">phoneNumber</p> <input  className="inputBs" onChange={handleInputPhone}></input>
-        <p className="cd">gender</p> <input  className="inputBs" onChange={handleInputGender}></input>
-        <p className="cd">price(per hour)</p> <input  className="inputBs" onChange={handleInputPrice}></input>
-        <p className="cd">image</p> <input  className="inputBs"  onChange={handleInputImage}></input>
-        <button className="btn-bs" onClick={handleAddNanny} >submit</button>
-      </div>}
-      { !card && <h1 className="mes-bs"> has been sent successfully</h1>}
+      {!card && Massage}
+      {card && (
+        <div className="cardBs">
+          <h1 className="hd">Enter your details</h1>
+          <p className="cd">name</p>{" "}
+          <input className="inputBs" onChange={handleInputName}></input>
+          <p className="cd">age</p>{" "}
+          <input className="inputBs" onChange={handleInputAge}></input>
+          <p className="cd">city</p>{" "}
+          <input className="inputBs" onChange={handleInputCity}></input>
+          <p className="cd">phoneNumber</p>{" "}
+          <input className="inputBs" onChange={handleInputPhone}></input>
+          <p className="cd">gender</p>{" "}
+          <input className="inputBs" onChange={handleInputGender}></input>
+          <p className="cd">price(per hour)</p>{" "}
+          <input className="inputBs" onChange={handleInputPrice}></input>
+          <p className="cd">image</p>{" "}
+          <input className="inputBs" onChange={handleInputImage}></input>
+          <button className="btn-bs" onClick={handleAddNanny}>
+            submit
+          </button>
+        </div>
+      )}
+      {!card && <h1 className="mes-bs"> has been sent successfully</h1>}
+      <div className="Calendar">
+        {card && (
+          <Calendar calendarType="US" onChange={onChange} value={value} />
+        )}
+      </div>
     </div>
   );
 }

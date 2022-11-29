@@ -8,8 +8,8 @@ function Nav() {
     <div className='Nav'>
         <img className='logo' src={logonew} alt="Logo"></img>
         <Link to = "/" className='link'>Homepage</Link>
-        <Link to = "/Parents" className='link'>Parents</Link>
-        <Link to = "/Babysitter" className='link'>Babysitter</Link>
+        <Link to = "/Parents" className='link'>View</Link>
+        <Link to = "/Babysitter" className='link'>Add Babysitter</Link>
         
         </div>
   )
