@@ -3,12 +3,15 @@ import axios from "axios";
 import Spinner from "../components/Spinner";
 import EditBox from "./EditBox";
 
+// import Card from "./Card";
+
 function Parents() {
   const [info, setInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [errorMes, setErrorMes] = useState(null);
   const [query, setQuery] = useState("");
   const [Edit, setEdit] = useState(false);
+  const [currentId, setCurrentId] = useState("");
 
   console.log(query);
 
@@ -68,6 +71,7 @@ function Parents() {
   //!edit
   const editInfo = (e) => {
     setEdit(true);
+    setCurrentId(e.target.id);
   };
 
   //!Add
@@ -76,28 +80,27 @@ function Parents() {
     return info.map((s) => {
       return (
         <div className="card" key={s.id}>
-          
-            {errorMes && <h2>{errorMes}</h2>}
-            <h1 className="infoCard1"> {s.name}</h1>
-            <h2 className="infoCard">age: {s.age}</h2>
-            <h2 className="infoCard">city: {s.city}</h2>
-            <h2 className="infoCard">price (per hour): {s.price}</h2>
-            <h2 className="infoCard">phoneNumber: {s.phoneNumber}</h2>
-            <h2 className="infoCard">gender: {s.gender}</h2>
-            <img src={s.avatar} alt={"Img"} className="imgCard"></img>
-            <button
-              className="btn-Del-Pr"
-              onClick={() => {
-                handleDelete(s.id);
-              }}
-            >
-              delete
-            </button>
-            <button className="btn-Edit-Pr" onClick={editInfo}>
-              edit
-            </button>
-         
-          {Edit && (
+          {errorMes && <h2>{errorMes}</h2>}
+          <h1 className="infoCard1"> {s.name}</h1>
+          <h2 className="infoCard">age: {s.age} </h2>
+          <h2 className="infoCard">city: {s.city}</h2>
+          <h2 className="infoCard">price (per hour): {s.price} </h2>
+          <h2 className="infoCard">phoneNumber: {s.phoneNumber}</h2>
+          <h2 className="infoCard">gender: {s.gender}</h2>
+          <img src={s.avatar} alt={"Img"} className="imgCard"></img>
+          <button
+            className="btn-Del-Pr"
+            onClick={() => {
+              handleDelete(s.id);
+            }}
+          >
+            delete
+          </button>
+          <button className="btn-Edit-Pr" onClick={editInfo} id={s.id}>
+            edit
+          </button>
+
+          {Edit && s.id === currentId && (
             <div className="float">
               <EditBox s={s} id={s.id} setEdit={setEdit} />
             </div>
@@ -124,8 +127,7 @@ function Parents() {
             <option value="0">Sort by:</option>
             <option value="1">name</option>
             <option value="2">age</option>
-            <option value="3">city</option>
-            <option value="4">price(per hour)</option>
+            <option value="3">price(per hour)</option>
           </select>
         </div>
       </div>
