@@ -1,4 +1,5 @@
 import "./App.css";
+import "./components/normalize.css";
 import { Route, Routes } from "react-router-dom";
 import Parents from "./components/Parents";
 import Babysitter from "./components/Babysitter";

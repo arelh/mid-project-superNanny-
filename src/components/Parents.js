@@ -2,21 +2,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import Spinner from "../components/Spinner";
 import EditBox from "./EditBox";
-
-// import Card from "./Card";
-
-// create a sort and display component
-// props: insertNanny, query, search,info
-// <>{insertNanny(search(query))}</>
-const SearchAndDisplayNanny = ({ insertNanny, query, info }) => {
-  const search = () => {
-    if (query) {
-      return info.filter((item) => item.name.includes(query));
-    }
-    return info;
-  };
-  return <div className="cards">{insertNanny(search(query))}</div>;
-};
+import SearchAndDisplayNanny from "./SearchAndDisplayNanny";
 
 function Parents() {
   const [info, setInfo] = useState([]);
@@ -25,10 +11,6 @@ function Parents() {
   const [query, setQuery] = useState("");
   const [Edit, setEdit] = useState(false);
   const [currentId, setCurrentId] = useState("");
-  // const [sorted, setSorted] = useState("");
-
-  // console.log(query);
-  // console.log(sorted);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -134,9 +116,12 @@ function Parents() {
           </select>
         </div>
       </div>
-
+      {/* console.log(insertNanny);
+      console.log(query);
+      console.log(info); */}
       {/* <div className="cards">{insertNanny(info)}</div> */}
       <SearchAndDisplayNanny
+
         insertNanny={insertNanny}
         query={query}
         info={info}
