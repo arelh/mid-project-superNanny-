@@ -41,13 +41,12 @@ a{
 }
 /* ----------------Homepage-------------------------- */
 .Homepage{
-  background: darkgoldenrod;
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  background-image: linear-gradient(rgba(0,2,0,0.75)), url("../src/components/images/view7.jpeg");
+  background-image:url("../src/components/images/view3.jpeg");
   background-position: center;
   background-repeat: no-repeat; 
   background-size: cover; 
@@ -72,6 +71,7 @@ a{
   margin-top: 200px;
   border:solid black 8px;
   border-radius: 50px;
+  padding: 15px;
   
 }
 
@@ -84,6 +84,7 @@ a{
   margin-top: 200px;
   border:solid black 8px;
   border-radius: 50px;
+  padding: 15px;
 
 }
 .image1{
@@ -120,7 +121,18 @@ a{
   align-items: center;
   height: 80px;
   padding: 15px;
+  font-family: 'Edu NSW ACT Foundation', cursive;
+
  
+}
+.select{
+  height: 38px;
+  background: #BDB76B;
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-size: 15px;
+
+
+
 }
 .card{
   width:400px;
@@ -133,6 +145,7 @@ a{
   margin: 5px;
   box-shadow: 5px 5px ;
   border-radius: 20px;
+  background: #E99607;
   
 
 }
@@ -149,7 +162,9 @@ a{
  font-size: 30px; 
 }
 .imgCard{
-  width: 60px;
+  width: 70px;
+  border-radius: 20px;
+  border:3px solid black
 }
 .infoCard{
   font-size: 20px;
@@ -212,9 +227,9 @@ a{
   flex-direction: column;
   border: 5px black solid;
   justify-content:space-around;
-  box-shadow: 0 5px 15px rgb(8 26 9 / 35%);
   margin-top: 20px;
   font-family: 'Maven Pro', sans-serif;
+  background-color: darkkhaki;
 
 }
 .cd{
@@ -227,6 +242,8 @@ a{
 }
 .inputBs{
 height: 35px;
+width: 250px;
+margin: 0 auto;
 }
 .btn-bs{
   background-color: royalblue;
@@ -247,6 +264,7 @@ height: 35px;
  justify-content: center;
  align-items: center;
  width: 40%;
+ height: 40%;
 }
 
 /* ----------------Edit box-------------------------- */
@@ -260,7 +278,7 @@ height: 35px;
   background: black;
   width: 500px;
   height: 500px;
-  
+  background-attachment: fixed;
 
 
 }
@@ -268,7 +286,6 @@ height: 35px;
    position: absolute;
    left: 0;
    top:0;
-  z-index: 99;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -279,7 +296,7 @@ height: 35px;
 
 .peh{
   color: white;
-  background-color: black;
+  background-color: #C0271F;
 }
 
 .btn-Edit{

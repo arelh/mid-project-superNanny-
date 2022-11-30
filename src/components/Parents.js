@@ -5,6 +5,7 @@ import EditBox from "./EditBox";
 
 // import Card from "./Card";
 
+
 function Parents() {
   const [info, setInfo] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
@@ -12,8 +13,11 @@ function Parents() {
   const [query, setQuery] = useState("");
   const [Edit, setEdit] = useState(false);
   const [currentId, setCurrentId] = useState("");
+  // const [sorted, setSorted] = useState("");
 
   console.log(query);
+  // console.log(sorted);
+
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,6 +29,8 @@ function Parents() {
 
         setInfo(data);
         setQuery(data);
+        // setSorted(data);
+
 
         setIsLoading(false);
         console.log(data);
@@ -34,7 +40,8 @@ function Parents() {
       }
     };
     fetchData();
-  }, []);
+  }, [Edit]);
+  // console.log(sorted);
 
   const handle = () => {
     if (query) {
@@ -52,9 +59,6 @@ function Parents() {
       const { data } = await axios.delete(
         `https://6374c35a08104a9c5f8866ff.mockapi.io/superNanny/${id}`
       );
-      console.log(data);
-
-      console.log(id);
       setInfo((prevState) =>
         prevState.filter((nanny) => {
           return nanny.id !== data.id;
@@ -102,7 +106,7 @@ function Parents() {
 
           {Edit && s.id === currentId && (
             <div className="float">
-              <EditBox s={s} id={s.id} setEdit={setEdit} />
+              <EditBox s={s} id={s.id} setEdit={setEdit} setInfo={setInfo} />
             </div>
           )}
         </div>
@@ -123,7 +127,7 @@ function Parents() {
           }}
         />
         <div className="custom-select">
-          <select>
+          <select className="select">
             <option value="0">Sort by:</option>
             <option value="1">name</option>
             <option value="2">age</option>

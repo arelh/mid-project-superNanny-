@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import axios from "axios";
 
-function EditBox({ s, id, setEdit }) {
+function EditBox({ s, id, setEdit,setInfo }) {
   const [nameVal, setNameVal] = useState(s.name);
   const [AgeVal, setAgeVal] = useState(s.age);
   const [CityVal, setCityVal] = useState(s.city);
@@ -34,7 +34,7 @@ function EditBox({ s, id, setEdit }) {
   };
   console.log(s);
   const handleEditNanny = async () => {
-    const { data } = axios.put(
+    const { data } = await axios.put(
       `https://6374c35a08104a9c5f8866ff.mockapi.io/superNanny/${id}`,
       {
         name: nameVal,
@@ -44,12 +44,15 @@ function EditBox({ s, id, setEdit }) {
         city: CityVal,
         phoneNumber: PhoneVal,
         gender: GenderVal,
-      }
+      },
     );
-    console.log({ data });
+    console.log( data );
     setEdit(false);
+    if (data){setInfo((prev)=>{return [...prev,prev[data.id]=data]})}
+    
+   
   };
-
+  
   return (
     <div className="EditBox">
       <div className="cardBs peh">
@@ -89,3 +92,5 @@ function EditBox({ s, id, setEdit }) {
 }
 
 export default EditBox;
+
+
