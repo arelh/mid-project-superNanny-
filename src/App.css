@@ -283,7 +283,6 @@ margin: 0 auto;
   align-items: center;
   position: absolute;
   top:300px;
-  background: black;
   width: 500px;
   height: 500px;
   background-attachment: fixed;
@@ -303,8 +302,7 @@ margin: 0 auto;
 }
 
 .peh{
-  color: white;
-  background-color: #C0271F;
+  color: black;
   align-items: center;
 }
 
@@ -479,6 +477,25 @@ margin: 0 auto;
   .cardBs{
     margin-bottom: 200px;
     width: 300px;
-    
+
   }
 }
+@media only screen and (max-width: 1072px){
+.EditBox{
+  margin: 0 auto;
+}
+}
+@media only screen and (max-width: 1132px){
+.EditBox{
+  margin: 0 auto;
+  
+}
+}
+@media only screen and (min-width: 300px)and (max-width:900px){
+.EditBox{
+  margin: 0 auto;
+  left: 100px;
+  
+}
+}
+
