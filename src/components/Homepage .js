@@ -1,8 +1,6 @@
 import React from "react";
 
-import a from "./images/a.jpg"
-import b from "./images/b.jpg"
-import c from "./images/c.jpg"
+
 // import logonew from "./images/logonew.png"
 import { Link } from "react-router-dom";
 
