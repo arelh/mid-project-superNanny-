@@ -28,9 +28,9 @@ function Homepage() {
           </Link>
         </p>
       </div>
-      <img className=" image image1" src={a} alt=""></img>
+      {/* <img className=" image image1" src={a} alt=""></img>
       <img className=" image image2" src={b} alt=""></img>
-      <img className=" image image3" src={c} alt=""></img>
+      <img className=" image image3" src={c} alt=""></img> */}
     </div>
   );
 }
