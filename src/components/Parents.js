@@ -5,6 +5,18 @@ import EditBox from "./EditBox";
 
 // import Card from "./Card";
 
+// create a sort and display component
+// props: insertNanny, query, search,info
+// <>{insertNanny(search(query))}</>
+const SearchAndDisplayNanny = ({ insertNanny, query, info }) => {
+  const search = () => {
+    if (query) {
+      return info.filter((item) => item.name.includes(query));
+    }
+    return info;
+  };
+  return <div className="cards">{insertNanny(search(query))}</div>;
+};
 
 function Parents() {
   const [info, setInfo] = useState([]);
@@ -15,9 +27,8 @@ function Parents() {
   const [currentId, setCurrentId] = useState("");
   // const [sorted, setSorted] = useState("");
 
-  console.log(query);
+  // console.log(query);
   // console.log(sorted);
-
 
   useEffect(() => {
     const fetchData = async () => {
@@ -28,12 +39,11 @@ function Parents() {
         );
 
         setInfo(data);
-        setQuery(data);
+        // setQuery(data);
         // setSorted(data);
 
-
         setIsLoading(false);
-        console.log(data);
+        // console.log(data);
       } catch (e) {
         console.log(e);
         setIsLoading(false);
@@ -43,14 +53,10 @@ function Parents() {
   }, [Edit]);
   // console.log(sorted);
 
-  const handle = () => {
-    if (query) {
-      setInfo(search(query));
-    }
-  };
   //!search
-  const search = (query) => {
-    return info.filter((item) => item.name.includes(query));
+
+  const handle = (e) => {
+    setQuery(e.target.value);
   };
 
   //!Delete;
@@ -80,8 +86,8 @@ function Parents() {
 
   //!Add
 
-  const insertNanny = () => {
-    return info.map((s) => {
+  const insertNanny = (data) => {
+    return data.map((s) => {
       return (
         <div className="card" key={s.id}>
           {errorMes && <h2>{errorMes}</h2>}
@@ -118,14 +124,7 @@ function Parents() {
     <div className="Parents">
       {isLoading && <Spinner />}
       <div className="search">
-        <input
-          placeholder="search.."
-          className="inputPr"
-          onChange={(e) => {
-            setQuery(e.target.value);
-            handle();
-          }}
-        />
+        <input placeholder="search.." className="inputPr" onChange={handle} />
         <div className="custom-select">
           <select className="select">
             <option value="0">Sort by:</option>
@@ -136,7 +135,12 @@ function Parents() {
         </div>
       </div>
 
-      <div className="cards">{insertNanny()}</div>
+      {/* <div className="cards">{insertNanny(info)}</div> */}
+      <SearchAndDisplayNanny
+        insertNanny={insertNanny}
+        query={query}
+        info={info}
+      />
     </div>
   );
 }
