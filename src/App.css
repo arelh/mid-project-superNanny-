@@ -1,115 +1,113 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nerko+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nerko+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Edu+NSW+ACT+Foundation&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@600&display=swap");
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 /* ------------------------Nav----------------------------- */
-.Nav{
+.Nav {
   position: sticky;
-  top:0;
+  top: 0;
   background-color: gray;
   width: 100%;
   height: 50px;
   display: flex;
   align-items: center;
-  font-size: clamp(15px, 5vw, 30px) ;
-  font-family: 'Nerko One', cursive; 
+  font-size: clamp(15px, 5vw, 30px);
+  font-family: "Nerko One", cursive;
 }
-.logo{
+.logo {
   width: 50px;
   margin-left: 20px;
 }
-.link{
+.link {
   margin: 2rem;
 }
-a{
+a {
   color: gold;
 }
-.link:hover{
+.link:hover {
   border-bottom: 5px black solid;
 }
 
-a{
+a {
   text-decoration: none;
   color: black;
-  
 }
-.material-symbols-outlined{
+.material-symbols-outlined {
   font-size: 50px;
 }
 /* ----------------Homepage-------------------------- */
-.Homepage{
+.Homepage {
   width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  background-image:url("../src/components/images/view 8.jpg");
+  justify-content: center;
+  align-items: center;
+  background-image: url("../src/components/images/view 8.jpg");
   background-position: center;
-  background-repeat: no-repeat; 
-  background-size: cover; 
-
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.Homepage a{
+.Homepage a {
   /* color: black; */
 }
-.logonew{
+.logonew {
   width: 150px;
   height: 150px;
   /* display: none; */
 }
 
 @keyframes example {
-  
 }
 
-.info1{
+.info1 {
   font-size: clamp(15px, 5vw, 30px);
-  width:320px;
-  height:200px;
+  width: 320px;
+  height: 200px;
   /* border: 5px black solid; */
-  font-family: 'Caveat', cursive;
-  margin-top: 200px;
-  border:solid black 8px;
+  font-family: "Caveat", cursive;
+  margin: 3rem;
+  border: solid black 8px;
   border-radius: 50px;
   padding: 15px;
-  
-  
+  background-color: #eeeeee88;
+  padding-top: 50px;
 }
 
-.info2{
+.info2 {
   font-size: clamp(15px, 5vw, 30px);
-  width:600px;
-  height:200px;
-  /* border: 5px black solid; */
-  font-family: 'Caveat', cursive;
-  margin-top: 200px;
-  border:solid black 8px;
+  width: 600px;
+  height: 200px;
+  font-family: "Caveat", cursive;
+  border: solid black 8px;
   border-radius: 50px;
   padding: 15px;
-
+  background-color: #eeeeee88;
+  padding-top: 50px;
 }
-.image1{
+
+.image1 {
   width: 150px;
-  height:150px
- }
-.image2{
+  height: 150px;
+}
+.image2 {
   width: 150px;
-  height:150px
- }
-.image3{
+  height: 150px;
+}
+.image3 {
   width: 150px;
-  height:150px
- }
+  height: 150px;
+}
 
 /* ----------------Parents-------------------------- */
 
-.Parents{
+.Parents {
   background-color: lightblue;
   width: 100%;
   height: 400vh;
@@ -118,96 +116,90 @@ a{
   /* position:absolute; */
   /* background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)), url("../src/components/images/view7.jpeg"); */
   background-position: center;
-  background-repeat: no-repeat; 
-  background-size: cover; 
-  
+  background-repeat: no-repeat;
+  background-size: cover;
 }
-.search{
+.search {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 80px;
   padding: 15px;
-  font-family: 'Edu NSW ACT Foundation', cursive;
-
- 
+  font-family: "Edu NSW ACT Foundation", cursive;
 }
-.inputPr{
+.inputPr {
   background-color: gold;
   margin: 10px;
   width: 350px;
   height: 40px;
   font-size: 30px;
-  font-family: 'Maven Pro', sans-serif;
-
+  font-family: "Maven Pro", sans-serif;
 }
-.select{
+.select {
   height: 38px;
   background-color: gold;
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: "Edu NSW ACT Foundation", cursive;
   font-size: 15px;
-
-
-
 }
-.card{
-  width:400px;
+.card {
+  width: 400px;
   height: 350px;
   display: flex;
   flex-direction: column;
-  border:black solid 4px;
+  border: black solid 4px;
   justify-content: space-around;
   align-items: center;
-  margin: 5px;
-  box-shadow: 5px 5px ;
+  margin: 15px;
+  box-shadow: 5px 5px;
   border-radius: 20px;
-  background:#f5f5f5;
-  
-
+  background: #f5f5f5;
+  transition: 0.6s;
 }
-.cards{
+.card:hover {
+  transform: scale(1.075);
+}
+.card button:hover {
+  background-color: rgb(244, 173, 81);
+}
+.card button {
+  font-weight: 600;
+}
+.cards {
   display: flex;
   flex-wrap: wrap;
   /* border:black solid 4px; */
   justify-content: space-around;
-  font-family: 'Edu NSW ACT Foundation', cursive;
-  
-
+  font-family: "Edu NSW ACT Foundation", cursive;
 }
-.infoCard1{
- font-size: 30px; 
+.infoCard1 {
+  font-size: 30px;
 }
-.imgCard{
+.imgCard {
   width: 70px;
   border-radius: 20px;
-  border:3px solid black
+  border: 3px solid black;
 }
-.infoCard{
+.infoCard {
   font-size: 20px;
 }
 
-
-.btn-parent{
+.btn-parent {
   font-size: 100px;
-  font-family: 'Maven Pro', sans-serif;
-
+  font-family: "Maven Pro", sans-serif;
 }
-.custom-select{
+.custom-select {
   margin: 10px;
   width: 250px;
-  font-family: 'Maven Pro', sans-serif;
-
-  
-  
+  font-family: "Maven Pro", sans-serif;
 }
 
-.btn-Del-Pr{
+.btn-Del-Pr {
   width: 60px;
   height: 20px;
   border-radius: 20px;
   background-color: gold;
 }
-.btn-Edit-Pr{
+.btn-Edit-Pr {
   width: 60px;
   height: 20px;
   border-radius: 20px;
@@ -216,83 +208,97 @@ a{
 
 /* ----------------Babysitter-------------------------- */
 
-.Babysitter{
-  background-color:cornflowerblue;
+.Babysitter {
+  background-color: cornflowerblue;
   width: 100%;
-  height: 130vh;
+  height: calc(100vh - 50px);
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-.Error{
+.Error {
   color: red;
   margin-left: 800px;
   margin-top: 200px;
 }
-.cardBs{
+.cardBs {
   display: flex;
-  width:600px;
-  height: 700px;
+  /* width: 600px; */
+  /* height: 700px; */
   flex-direction: column;
-  border: 5px black solid;
-  justify-content:flex-start;
+  align-items: center;
+  border: 0.2px #222 solid;
+  justify-content: flex-start;
   margin-top: 20px;
-  font-family: 'Maven Pro', sans-serif;
+  font-family: "Maven Pro", sans-serif;
   background-color: darkkhaki;
-
+  padding: 24px;
+  box-shadow: 0px 0px 10px 4px rgb(183, 200, 232);
+  border-radius: 15px;
 }
-.cd{
-  font-size: 40px;
+.cd {
+  font-size: 18px;
   text-align: center;
 }
-.hd{
-  font-size: 50px;
+.hd {
+  font-size: 24px;
   text-align: center;
 }
-.inputBs{
-height: 35px;
-width: 250px;
-margin: 0 auto;
-}
-.btn-bs{
-  background-color: royalblue;
-  width: 150px;
-  height: 50px;
+.inputBs {
+  height: 28px;
+  width: 250px;
   margin: 0 auto;
-  
 }
-
-.mes-bs{
-  color:red;
+.btn-bs {
+  background-color: royalblue;
+  font-size: 20px;
+  width: 80px;
+  height: 40px;
+  margin: 10px auto 0;
+  padding: 0;
+  border-radius: 8px;
+}
+.label-input {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-content: center;
+}
+.label-input input {
+  display: block;
+  width: 150px;
+}
+.mes-bs {
+  color: red;
   margin-top: 200px;
   font-size: 40px;
 }
 
-.Calendar{
+.Calendar {
   display: flex;
- justify-content: center;
- align-items: center;
- width: 40%;
- height: 40%;
+  justify-content: center;
+  align-items: center;
+  margin: 40px;
+  box-shadow: 0px 0px 10px 4px rgb(183, 200, 232);
 }
 
 /* ----------------Edit box-------------------------- */
-.EditBox{
+.EditBox {
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: absolute;
-  top:300px;
+  top: 300px;
   width: 500px;
   height: 500px;
   background-attachment: fixed;
-
-
 }
-.float{
-   position: absolute;
-   left: 0;
-   top:0;
+.float {
+  position: absolute;
+  left: 0;
+  top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -301,19 +307,18 @@ margin: 0 auto;
   background-attachment: fixed;
 }
 
-.peh{
+.peh {
   color: black;
   align-items: center;
 }
 
-.btn-Edit{
-border: 3px solid white;
-background-color: gold;
-color: black;
-width: 50px;
-margin: 0 auto;
+.btn-Edit {
+  border: 3px solid white;
+  background-color: gold;
+  color: black;
+  width: 50px;
+  margin: 0 auto;
 }
-
 
 .spinnerContainer {
   height: 100%;
@@ -327,175 +332,167 @@ margin: 0 auto;
   .Homepage {
     flex-direction: column;
   }
-  .info1{
-   justify-content: center;
-   align-items: center;
-   margin: 0 auto;
+  .info1 {
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
   }
-  .info2{ 
-   justify-content: baseline;
-   margin: 0 auto;
-   margin-bottom: 300px;
-   height: 150px;
-   
-}
+  .info2 {
+    justify-content: baseline;
+    margin: 0 auto;
+    margin-bottom: 300px;
+    height: 150px;
+  }
 }
 @media only screen and (max-width: 770px) {
-  .material-symbols-outlined{
+  .material-symbols-outlined {
     display: none;
   }
 }
-@media only screen and (max-width: 770px)and(min-width:640){
-
+@media only screen and (max-width: 770px) and(min-width:640) {
 }
-@media only screen and (max-width: 1430px){
-  .material-symbols-outlined{
+@media only screen and (max-width: 1430px) {
+  .material-symbols-outlined {
     display: none;
+  }
 }
-}
-@media only screen and (max-width: 632px){
-  .logo{
+@media only screen and (max-width: 632px) {
+  .logo {
     width: 50px;
     margin-left: 5px;
   }
-  .link{
+  .link {
     margin: 1rem;
   }
 }
-@media only screen and (max-width: 616px){
-  .info1{
+@media only screen and (max-width: 616px) {
+  .info1 {
     width: 300px;
     height: 150px;
   }
-  .info2{
+  .info2 {
     width: 300px;
     height: 250px;
   }
 }
-@media only screen and (max-width: 508px){
-  .inputPr{
+@media only screen and (max-width: 508px) {
+  .inputPr {
     background-color: gold;
     margin: 10px;
     width: 200px;
   }
-  .select{
+  .select {
     height: 38px;
     background-color: gold;
-    font-family: 'Edu NSW ACT Foundation', cursive;
+    font-family: "Edu NSW ACT Foundation", cursive;
     font-size: 15px;
     width: 100px;
-  } 
+  }
 }
-@media only screen and (max-width: 1120px){
-  .cardBs{
+@media only screen and (max-width: 1120px) {
+  .cardBs {
     display: flex;
-    width:300px;
+    width: 300px;
     height: 400px;
     flex-direction: column;
     border: 5px black solid;
-    justify-content:space-around;
+    justify-content: space-around;
     margin-top: 20px;
-    font-family: 'Maven Pro', sans-serif;
+    font-family: "Maven Pro", sans-serif;
     background-color: darkkhaki;
     font-size: 10px;
     margin-top: 100px;
+  }
+  .cd {
+    font-size: 20px;
+    text-align: center;
+  }
+  .hd {
+    font-size: 20px;
+    text-align: center;
+  }
+  .inputBs {
+    height: 20px;
+    width: 100px;
+    margin: 0 auto;
+  }
+  .btn-bs {
+    background-color: royalblue;
+    width: 150px;
+    height: 50px;
+    margin: 0 auto;
+  }
+  .Calendar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    height: 40%;
+    padding-left: 10px;
+    margin-top: 80px;
+  }
 }
-.cd{
-  font-size: 20px;
-  text-align: center;
-}
-.hd{
-  font-size: 20px;
-  text-align: center;
-}
-.inputBs{
-height: 20px;
-width: 100px;
-margin: 0 auto;
-}
-.btn-bs{
-  background-color: royalblue;
-  width: 150px;
-  height: 50px;
-  margin: 0 auto;
-  
-}
-.Calendar{
-  display: flex;
- justify-content: center;
- align-items: center;
- width: 40%;
- height: 40%;
- padding-left: 10px;
- margin-top: 80px;
-}
-}
-@media only screen and (max-width: 760px){
-  .cardBs{
-    
-    width:200px;
+@media only screen and (max-width: 760px) {
+  .cardBs {
+    width: 200px;
     height: 500px;
     flex-direction: column;
     border: 5px black solid;
-    justify-content:space-around;
+    justify-content: space-around;
     margin-top: 20px;
-    font-family: 'Maven Pro', sans-serif;
+    font-family: "Maven Pro", sans-serif;
     background-color: darkkhaki;
     font-size: 10px;
     margin-top: 100px;
-}
-.cd{
-  font-size: 20px;
-  text-align: center;
-}
-.hd{
-  font-size: 20px;
-  text-align: center;
-}
-.inputBs{
-height: 20px;
-width: 100px;
-margin: 0 auto;
-}
-.btn-bs{
-  background-color: royalblue;
-  width: 150px;
-  height: 50px;
-  margin: 0 auto;
-  
-}@media only screen and (max-width: 724px){
-  .Calendar{
-    width: 60%;
-    height: 40%;
+  }
+  .cd {
+    font-size: 20px;
+    text-align: center;
+  }
+  .hd {
+    font-size: 20px;
+    text-align: center;
+  }
+  .inputBs {
+    height: 20px;
+    width: 100px;
+    margin: 0 auto;
+  }
+  .btn-bs {
+    background-color: royalblue;
+    width: 150px;
+    height: 50px;
+    margin: 0 auto;
+  }
+  @media only screen and (max-width: 724px) {
+    .Calendar {
+      width: 60%;
+      height: 40%;
+    }
   }
 }
-}
-@media only screen and (max-width: 724px){
-  .Calendar{
+@media only screen and (max-width: 724px) {
+  .Calendar {
     display: none;
   }
-  .cardBs{
+  .cardBs {
     margin-bottom: 200px;
     width: 300px;
-
   }
 }
-@media only screen and (max-width: 1072px){
-.EditBox{
-  margin: 0 auto;
+@media only screen and (max-width: 1072px) {
+  .EditBox {
+    margin: 0 auto;
+  }
 }
+@media only screen and (max-width: 1132px) {
+  .EditBox {
+    margin: 0 auto;
+  }
 }
-@media only screen and (max-width: 1132px){
-.EditBox{
-  margin: 0 auto;
-  
+@media only screen and (min-width: 300px) and (max-width: 900px) {
+  .EditBox {
+    margin: 0 auto;
+    left: 100px;
+  }
 }
-}
-@media only screen and (min-width: 300px)and (max-width:900px){
-.EditBox{
-  margin: 0 auto;
-  left: 100px;
-  
-}
-}
-

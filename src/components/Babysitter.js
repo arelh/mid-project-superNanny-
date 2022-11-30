@@ -61,20 +61,39 @@ function Babysitter() {
       {card && (
         <div className="cardBs">
           <h1 className="hd">Enter your details</h1>
-          <p className="cd">name</p>{" "}
-          <input className="inputBs" onChange={handleInputName}></input>
-          <p className="cd">age</p>{" "}
-          <input className="inputBs" onChange={handleInputAge}></input>
-          <p className="cd">city</p>{" "}
-          <input className="inputBs" onChange={handleInputCity}></input>
-          <p className="cd">phoneNumber</p>{" "}
-          <input className="inputBs" onChange={handleInputPhone}></input>
-          <p className="cd">gender</p>{" "}
-          <input className="inputBs" onChange={handleInputGender}></input>
-          <p className="cd">price(per hour)</p>{" "}
-          <input className="inputBs" onChange={handleInputPrice}></input>
-          <p className="cd">image</p>{" "}
-          <input className="inputBs" onChange={handleInputImage}></input>
+          <div className="label-input">
+            {" "}
+            <p className="cd">name</p>{" "}
+            <input className="inputBs" onChange={handleInputName}></input>
+          </div>
+          <div className="label-input">
+            <p className="cd">age</p>{" "}
+            <input className="inputBs" onChange={handleInputAge}></input>
+          </div>
+          <div className="label-input">
+            {" "}
+            <p className="cd">city</p>{" "}
+            <input className="inputBs" onChange={handleInputCity}></input>
+          </div>
+          <div className="label-input">
+            <p className="cd">phoneNumber</p>{" "}
+            <input className="inputBs" onChange={handleInputPhone}></input>
+          </div>
+          <div className="label-input">
+            {" "}
+            <p className="cd">gender</p>{" "}
+            <input className="inputBs" onChange={handleInputGender}></input>
+          </div>
+          <div className="label-input">
+            {" "}
+            <p className="cd">price(per hour)</p>{" "}
+            <input className="inputBs" onChange={handleInputPrice}></input>
+          </div>
+          <div className="label-input">
+            <p className="cd">image</p>{" "}
+            <input className="inputBs" onChange={handleInputImage}></input>
+          </div>
+
           <button className="btn-bs" onClick={handleAddNanny}>
             submit
           </button>
