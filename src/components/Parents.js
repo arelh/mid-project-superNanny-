@@ -107,14 +107,14 @@ function Parents() {
       {isLoading && <Spinner />}
       <div className="search">
         <input placeholder="search.." className="inputPr" onChange={handle} />
-        <div className="custom-select">
+        {/* <div className="custom-select">
           <select className="select">
             <option value="0">Sort by:</option>
             <option value="1">name</option>
             <option value="2">age</option>
             <option value="3">price(per hour)</option>
           </select>
-        </div>
+        </div> */}
       </div>
       {/* console.log(insertNanny);
       console.log(query);
